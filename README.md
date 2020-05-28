@@ -1,5 +1,7 @@
-TODO:
-* split requirements to core and only for development
-* create configuration for production
-* shell_plus
-* copy setup.cfg settings from another project
+#### How to run project:
+
+1. Create `.env` file and put content from `.env.example`
+2. Run `docker-compose -f dev.yml up --build` in console
+3. Navigate to http://127.0.0.1:8000/admin/
+
+API documentation: http://127.0.0.1:8000/docs/
