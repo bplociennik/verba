@@ -1,0 +1,27 @@
+celery==4.4.2
+django-cors-headers==3.3.0
+django-environ==0.4.5
+django-redis==4.12.1
+django==3.0.6
+djangorestframework==3.11.0
+psycopg2-binary
+Pillow==7.1.2
+drf-yasg==1.17.1
+djangorestframework-simplejwt==4.4.0
+dj-rest-auth[with_social]==1.0.5
+django-cachalot==2.2.0
+
+# Dev
+pre-commit==2.4.0
+black==19.10b0
+django-extensions==2.2.9
+Werkzeug[watchdog]==1.0.1
+click==7.1.2
+ipdb==0.13.2
+ipython==7.14.0
+django-debug-toolbar==2.2
+isort==4.3.21
+flake8==3.8.2
+
+pytest-django
+pytest

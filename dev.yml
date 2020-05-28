@@ -1,0 +1,52 @@
+version: '3.5'
+
+x-base: &base
+  image: verba-django
+  volumes:
+    - .:/code
+    - static:/code/static
+    - media:/code/media
+  depends_on:
+    - postgres
+    - redis
+  env_file: .env
+
+services:
+  postgres:
+    image: postgres:12.0-alpine
+    environment:
+      - PGDATA=/var/lib/postgresql/data
+    volumes:
+      - pg-data:/var/lib/postgresql/data/
+    env_file: .env
+
+  redis:
+    image: redis:5.0.8-alpine
+
+  django:
+    <<: *base
+    build:
+      context: .
+      dockerfile: compose/Dockerfile
+    command: runserver_plus
+    ports:
+      - 8000:8000
+    stdin_open: true
+    tty: true
+
+  bootstrap:
+    <<: *base
+    command: manage bootstrap
+
+  celery:
+    <<: *base
+    command: celery
+
+  celerybeat:
+    <<: *base
+    command: celery_beat
+
+volumes:
+  pg-data:
+  static:
+  media:
