@@ -38,7 +38,9 @@ INSTALLED_APPS = (
     "corsheaders",
     "django_extensions",
     "rest_framework",
+    "rest_framework.authtoken",
     "drf_yasg",
+    "dj_rest_auth",
 ) + LOCAL_APPS
 
 
@@ -82,8 +84,16 @@ TEMPLATES = [
 # --- REST FRAMEWORK ---
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
-    "DEFAULT_RENDER_CLASSES": ("rest_framework.renderers.JSONRenderer",),
-    "DEFAULT_AUTHENTICATION_CLASSES": ("dj_rest_auth.utils.JWTCookieAuthentication",),
+    "DEFAULT_RENDER_CLASSES": (
+        "rest_framework.renderers.JSONRenderer",
+        "rest_framework.renderers.BrowsableAPIRenderer",
+    ),
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework.authentication.SessionAuthentication",
+        "dj_rest_auth.utils.JWTCookieAuthentication",
+    ),
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 25,
     "NON_FIELD_ERRORS_KEY": "errors",
 }
 
