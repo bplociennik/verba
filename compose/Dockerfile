@@ -7,7 +7,6 @@ COPY ./requirements.txt /wheels/
 RUN apt-get update && apt-get install -y --no-install-recommends
 RUN pip install -U pip && pip wheel -r requirements.txt
 
-
 FROM python:${PYTHON_VERSION}
 ENV PYTHONUNBUFFERED 1
 COPY --from=build /wheels /wheels
