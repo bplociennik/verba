@@ -31,3 +31,5 @@ jobs:
     - name: Run Tests
       run: |
         pytest
+    - name: Codecov
+      uses: codecov/codecov-action@v1.0.7
