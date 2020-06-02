@@ -1,9 +1,12 @@
 name: Django CI
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   build:
+    env:
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      DATABASE_URL: ${{ secrets.DATABASE_URL }} 
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
