@@ -29,8 +29,8 @@ class TestCreateUser:
         )
 
         assert user.is_active
-        assert user.is_staff is False
-        assert user.is_superuser is False
+        assert user.is_staff
+        assert user.is_superuser
         assert django_user_model.objects.filter(email=email).exists()
 
 
