@@ -13,4 +13,4 @@ class Sentence(models.Model):
         verbose_name_plural = _("sentences")
 
     def __str__(self):
-        return f"Sentence ({self.id})"
+        return f"{self.__class__.__name__}(id={self.id}, word={self.word.name})"
