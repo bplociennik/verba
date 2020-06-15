@@ -30,6 +30,6 @@ jobs:
         flake8 src
     - name: Run Tests
       run: |
-        pytest --cov=./
+        py.test --cov-report=xml --cov=./
     - name: Codecov
       uses: codecov/codecov-action@v1.0.7
