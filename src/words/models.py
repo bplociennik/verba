@@ -23,4 +23,4 @@ class Word(models.Model):
         verbose_name_plural = _("words")
 
     def __str__(self):
-        return f"Word ({self.name})"
+        return f"{self.__class__.__name__}(id={self.id}, name={self.name})"
