@@ -1,5 +1,4 @@
 import pytest
-
 from words.models import Word
 
 

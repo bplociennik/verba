@@ -1,7 +1,6 @@
 import pytest
-
-from words.models import Word
 from sentences.models import Sentence
+from words.models import Word
 
 
 @pytest.mark.django_db
