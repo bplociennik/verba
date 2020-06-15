@@ -3,6 +3,7 @@
 ![github-ci-image]
 [![coverage-status-image]][codecov] 
 [![requirements-status-image]][requires]
+![black-image]
 
 #### How to run project:
 
@@ -19,3 +20,5 @@ API documentation: http://127.0.0.1:8000/docs/
 
 [requirements-status-image]: https://requires.io/github/vThaian/verba/requirements.svg?branch=develop
 [requires]: https://requires.io/github/vThaian/verba/requirements/?branch=develop
+
+[black-image]: https://img.shields.io/badge/code%20style-black-000000.svg
