@@ -8,3 +8,4 @@ omit =
   *wsgi/*,
   *admin.py,
   manage.py
+source=src
